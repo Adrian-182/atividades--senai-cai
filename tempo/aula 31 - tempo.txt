@@ -1,0 +1,74 @@
+/*
+Nome: Adrian Alexandre
+Nome do arquivo: peso
+Data: 06/03/2025
+*/
+
+#define pinLedVermelho 13
+#define pinLedAmarelo 12
+#define pinLedAzul 11
+#define pinLedVerde 10
+#define PinLedLaranja 9
+#define pinLedBranco 8
+
+void setup()
+{
+   Serial.begin(9600);
+  pinMode(pinLedVermelho, OUTPUT);
+  pinMode(pinLedAmarelo, OUTPUT);
+  pinMode(pinLedAzul, OUTPUT);
+  pinMode(pinLedVerde, OUTPUT);
+  pinMode(PinLedLaranja, OUTPUT);
+  pinMode(pinLedBranco, OUTPUT);
+  
+  
+  int clima = 5;
+  
+  switch (clima)
+  {
+  
+  case 0:
+  
+  digitalWrite(pinLedVermelho, HIGH);
+  Serial.println("pessimo");
+  break;
+  
+    case 1:
+    
+   digitalWrite(pinLedAmarelo, HIGH);
+  Serial.println("ruim");
+  break;
+    
+    case 2:
+    
+   digitalWrite(pinLedAzul, HIGH);
+  Serial.println("normal");
+  break;
+    
+    case 3:
+    
+   digitalWrite(pinLedVerde, HIGH);
+  Serial.println("boa");
+  break;
+    
+    case 4:
+    
+    
+   digitalWrite(PinLedLaranja, HIGH);
+  Serial.println("exelente");
+  break;
+    
+   default:
+    
+    
+   digitalWrite(pinLedBranco, HIGH);
+  
+  break;  
+  }
+  
+}
+
+void loop()
+{
+
+}
