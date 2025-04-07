@@ -1,0 +1,48 @@
+#include <Arduino.h>
+
+const int pinBotao = 3;
+
+// prototipos das funcoes
+
+void ligaLed(int);// cria e define uma funcao vazia para ligaLed 
+void desligaLed(int);// cria e define uma funcao vazia para desligaLed 
+void piscaLed(int, unsigned long);// cria e define uma funcao vazia para piscaLed 
+int somaDeDoisNumeros(int, int);// cria uma variavel para armazenar dois numeros
+
+void setup()
+{
+  pinMode(2, OUTPUT);// funcao necessaria para liagr o led
+  Serial.begin(9600);// liga a serial
+}
+
+void loop()
+{
+  piscaLed(2, 100);//define o pino do led e o tempo q ele vai piscar
+  int resultadoSoma = somaDeDoisNumeros(4, 8);
+  Serial.println(resultadoSoma);//ira aparecer o resultado da somaDeDoisNumeros
+}
+
+void ligaLed(int pin)// funcao vazia para ligar o led
+{
+
+  digitalWrite(pin, HIGH);// liga o led
+}
+void desligaLed(int pin)// fucao vazia para desligar o led
+{
+
+  digitalWrite(pin, LOW);//desliga o led
+}
+
+void piscaLed(int pin, unsigned long tempo)// funcao vazia para pisca o led
+{
+  ligaLed(pin);
+  delay(tempo);
+  desligaLed(pin);
+  delay(tempo);
+}
+
+int somaDeDoisNumeros(int numeroA, int numeroB)
+{
+  int resultado = numeroA + numeroB;//calcula a soma
+  return resultado;//retorna o valor da soma
+}
